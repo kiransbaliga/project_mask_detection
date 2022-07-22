@@ -80,4 +80,4 @@ i=image.img_to_array(i)/255.0
 i=i.reshape(1,100,100,3)
 p=model.predict(i)
 print(p)
-print(p[0][0]<p[0][1])
+print(p[0][0]>p[0][1])
