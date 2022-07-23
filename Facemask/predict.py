@@ -17,7 +17,7 @@ def predict_label(img_path):
 msk=0
 nmsk=0
 for i in range(1,30):
-    img='DataSets/DataSets/Mask/1 ('+str(i)+').jpg'
+    img='DataSets/DataSets/Maskless/1 ('+str(i)+').jpg'
     p=predict_label(img)
     print(p)
     if p=="Mask on":
