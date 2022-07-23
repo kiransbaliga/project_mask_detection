@@ -30,21 +30,24 @@ while(True):
         # print(x,y,w,h)
         roi_gray = gray[y:y+h, x:x+w]  # (ycord_start, ycord_end)
         roi_color = frame[y:y+h, x:x+w]
-
+        #make a bigger frame
+        
+        roi = frame[y-100:y+h+500, x-200:x+w+500]
+        # print(roi)
         # recognize? deep learned model predict keras tensorflow pytorch scikit learn
         id_, conf = recognizer.predict(roi_gray)
         if conf >= 4 and conf <= 85:
             # print(5: #id_)
             # print(labels[id_])
             font = cv2.FONT_HERSHEY_SIMPLEX
-            name = labels[id_]
+            name = ""
             color = (255, 255, 255)
-            stroke = 2
+            stroke = 0
             cv2.putText(frame, name, (x, y), font, 1,
                         color, stroke, cv2.LINE_AA)
 
         img_item = "./Face/7.png"
-        cv2.imwrite(img_item, roi_color)
+        cv2.imwrite(img_item, roi)
         mainn()
         color = (255, 0, 0)  # BGR 0-255
         stroke = 2
