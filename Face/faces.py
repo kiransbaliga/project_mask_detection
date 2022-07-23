@@ -3,6 +3,7 @@ import cv2
 import pickle
 
 from detector import mainn
+from predicter import mai
 # from VV.detector import mainn
 face_cascade = cv2.CascadeClassifier(
     './Face/cascades/data/haarcascade_frontalface_alt2.xml')
@@ -49,6 +50,7 @@ while(True):
         img_item = "./Face/7.png"
         cv2.imwrite(img_item, roi)
         mainn()
+        mai("./Face/7.png")
         color = (255, 0, 0)  # BGR 0-255
         stroke = 2
         end_cord_x = x + w
